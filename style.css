@@ -1,0 +1,378 @@
+/* GENERAL BODY */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  min-height: 100vh;
+  background: linear-gradient(rgba(255,105,180,0.3), rgba(255,182,193,0.3)), url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* LOCK SCREEN CONTAINER */
+.lock-container {
+  margin-top: 150px;
+}
+
+.code input {
+  width: 60px;
+  height: 70px;
+  font-size: 30px;
+  text-align: center;
+  margin: 5px;
+  border-radius: 12px;
+  border: none;
+}
+
+/* TITLES */
+h1 {
+  font-size: 40px;
+  margin: 30px 0;
+  text-shadow: 0 0 15px rgb(249, 131, 237);
+}
+
+h2 {
+  font-size: 35px;
+  text-align: center;
+  color: #ff4d88;
+  margin-bottom: 15px;
+}
+
+/* GLASS SECTIONS */
+section {
+  margin: 30px auto;
+  width: 85%;
+  max-width: 900px;
+  background: rgba(0,0,0,0.15); /* semi-transparent dark for contrast */
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  color: #fff; /* white works now on darker overlay */
+}
+
+
+/* DAYS COUNTER */
+#days {
+  font-size: 22px;
+  margin: 10px 0;
+  color: #ffd6ec;
+}
+
+/* GALLERY */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.gallery img {
+  width: 160px;
+  border: 8px solid white;
+  border-bottom: 30px solid white;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  transform: rotate(-3deg);
+  transition: 0.4s;
+}
+.gallery img:nth-child(even) {
+  transform: rotate(3deg);
+}
+.gallery img:hover {
+  transform: scale(1.1) rotate(0deg);
+}
+
+.photo-card.wide {
+  width: 250px;
+}
+
+/* TIMELINE */
+.timeline ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+.timeline li {
+  display: inline-block;
+  margin: 0 10px 15px 10px;
+  font-size: 18px;
+}
+.timeline li::before {
+  content: "❤️";
+  margin-right: 5px;
+}
+
+/* LOVE LETTER */
+.letter {
+  background: #fff0f5;
+  color: #330000;
+  font-family: 'Times New Roman', serif;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+  line-height: 1.7;
+  position: relative;
+}
+.letter::before {
+  content: "";
+  position: absolute;
+  top: -10px; left: -10px; right: -10px; bottom: -10px;
+  border: 2px dashed #ff99cc;
+  border-radius: 18px;
+  pointer-events: none;
+}
+
+/* BUTTON */
+button {
+  display: inline-block;
+  padding: 14px 26px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #ff4d88, #ff99cc);
+  color: white;
+  cursor: pointer;
+  margin: 15px auto;
+  transition: 0.3s;
+}
+button:hover {
+  transform: scale(1.1);
+}
+
+/* FLOATING HEARTS */
+.hearts-bg span {
+  position: fixed;
+  bottom: -20px;
+  color: #ff6fa5;
+  font-size: 18px;
+  animation: floatUp 6s linear forwards;
+}
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+}
+}
+
+.messages {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+  overflow: hidden; /* contain floated bubbles */
+  padding: 15px;
+  background: rgba(255,255,255,0.15); /* glassy container */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.msg {
+  padding: 10px 15px;
+  margin: 8px 0;
+  border-radius: 20px;
+  display: inline-block;
+  max-width: 80%;
+  clear: both; /* ensures each bubble starts on new line */
+}
+
+.msg.her {
+  background: #ffb6c1; /* light pink bubble */
+  color: #330000;
+  float: left;
+}
+
+.msg.me {
+  background: #ff4d88; /* darker pink bubble */
+  color: #fff;
+  float: right;
+}
+
+.reasons {
+  text-align: center;
+}
+
+.reasons {
+  text-align: center;
+}
+
+/* Closed state (small box) */
+.reason-box {
+  margin: 20px auto 0;
+  width: 220px;
+  height: 50px;
+
+  border-radius: 30px;
+  background: rgba(255,255,255,0.85);
+  color: #ff2f6d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  padding: 0 15px;
+
+  overflow: hidden;
+
+  transition: all 0.5s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* Open state (bigger box) */
+.reason-box.open {
+  width: 320px;
+  height: 120px;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+/* ================= POPUP ================= */
+
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: white;
+  color: #ff2f6d;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 320px;
+  animation: popIn 0.6s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ================= SECTION GLOW ================= */
+
+section {
+  box-shadow:
+    0 0 25px rgba(255,105,180,0.35),
+    0 8px 30px rgba(0,0,0,0.25);
+  transition: 0.4s;
+}
+
+section:hover {
+  box-shadow:
+    0 0 40px rgba(255,105,180,0.6),
+    0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* ================= SPARKLES ================= */
+
+.sparkles span {
+  position: fixed;
+  pointer-events: none;
+  color: #ffd1ec;
+  font-size: 14px;
+  animation: sparkleFloat 6s linear forwards;
+}
+
+@keyframes sparkleFloat {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ================= HEART CURSOR ================= */
+
+.heart {
+  position: fixed;
+  pointer-events: none;
+  font-size: 18px;
+  animation: heartFade 1s linear forwards;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes heartFade {
+  to {
+    transform: translate(-50%, -80px);
+    opacity: 0;
+  }
+}
+
+
+/* ================= HUG MESSAGE ================= */
+
+#hugMessage {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ff2f6d;
+  
+}
+
+/* Hug screen squeeze */
+
+body.hugging {
+  animation: squeeze 0.5s ease;
+}
+
+@keyframes squeeze {
+  0% { transform: scale(1); }
+  30% { transform: scale(0.96); }
+  60% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Hearts */
+
+.heart {
+  position: fixed;
+  pointer-events: none;
+  font-size: 20px;
+  transform: translate(-50%, -50%);
+  animation: heartFloat 1.2s ease forwards;
+}
+
+@keyframes heartFloat {
+  to {
+    transform: translate(-50%, -120px) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Mwah text */
+
+.mwah {
+  position: fixed;
+  pointer-events: none;
+  font-size: 28px;            /* bigger text */
+  font-weight: bold;
+  color: #ff2f6d;
+
+  text-shadow: 0 0 10px rgba(255,105,180,0.8);
+
+  transform: translate(-50%, -50%);
+  animation: mwahFloat 2.8s ease forwards;   /* slower animation */
+}
+
+@keyframes mwahFloat {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0px) scale(0.8);
+  }
+
+  30% {
+    transform: translate(-50%, -30px) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-50%, -120px) scale(1.2);
+    opacity: 0;
+  }
+}

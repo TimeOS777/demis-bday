@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Memories ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <audio id="bgMusic" autoplay loop>
+  <source src="your-song.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <div class="sparkles"></div>
+
+  <div id="birthdayPopup" class="popup">
+  <div class="popup-content">
+    <h2>🎂 Happy Birthday My Love ❤️</h2>
+    <p>
+      I made this little place for you…<br>
+      just to remind you how special you are to me.
+    </p>
+    <button onclick="closePopup()">Open 💕</button>
+  </div>
+</div>
+
+
+  <div class="hearts-bg"></div>
+
+  <h1>Welcome back to our story ❤️</h1>
+  <section>
+  <h2>Our Time Together ❤️</h2>
+  <p id="daysTogether"></p>
+  </section>
+
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <img class="photo-card" src="sync.png" alt="Memory 1">
+    <img class="photo-card" src="photos/photo3.jpg" alt="Memory 3">
+    <img class="photo-card wide" class="meow" src="talking.png" alt="Memory 2">
+  </section>
+
+  <!-- Love Letter -->
+  <section class="letter">
+    <h2>Love Letter 💌</h2>
+    <p>
+      My dearest love,<br><br>
+      From the day we met, you've filled my life with joy...
+      Every moment with you is a memory I cherish...
+      Happy Birthday ❤️<br><br>
+      Yours forever,<br>
+      Shubi
+    </p>
+  </section>
+
+  <!-- Reasons Button -->
+  <section class="reasons">
+  <h2>Why I Love You 💕</h2>
+
+  <button onclick="showReason()">Tap to open 💖</button>
+
+  <div id="reasonBox" class="reason-box">
+    <span id="reasonText">...</span>
+  </div>
+  </section>
+
+<!-- Messages -->
+
+  <section class="messages">
+        <h2>My favourite person to talk to</h2>
+    <div class="msg her">MISS U SO MUCH BABY 💖</div>
+    <div class="msg me">MISS U MOREE MWAHH ❤️</div>
+    <div class="msg her">I LOVE U SO MUCH 💕</div>
+    <div class="msg me">LOVE U TOO 💞</div>
+    <div class="msg her">MWAH 💗</div>
+  </section>
+
+  <!-- Hugs -->
+  <section class="hug-section">
+    <h2>HUGGIEE</h2>
+    <button onclick="sendHug()">Click for a hug</button>
+    <p id="hugMessage"></p>
+  </section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
